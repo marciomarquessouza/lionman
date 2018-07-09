@@ -1,0 +1,141 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css"></link>
+  <link rel="stylesheet" href="style2.css"></link>
+</head>
+<body>
+
+  <div id="vue-app">
+  <!--
+    <h1>{{greet('afternoon')}}</h1>
+    <p>{{ name }}</p>
+    <p>Job: {{ job }}</p>
+
+    <h1>The Bind Magic</h1>
+
+    <a :href="website">Talco</a>
+    <p>
+      <input type="text" :value="job">
+    </p>
+    <p v-html="websiteTag"></p>
+
+
+  <h1>Events</h1>
+    <h1>Using methods</h1>
+    <button type="button" v-on:click.once="addYear(1)">Add 1 year</button>
+    <button type="button" v-on:click.stop="subtractYear(1)">Subtract 1 year</button>
+    <button type="button" v-on:dblclick="addYear(10)">Add 10 (double click) years</button>
+    <button type="button" v-on:dblclick="subtractYear(10)">Subtract 10 (double click) year</button>
+    <h1>Using unary</h1>
+    <button type="button" v-on:click="age++">Add 1 year</button>
+    <button type="button" v-on:click="">Subtracting 1 year</button>
+
+    <p>My age is {{age}}</p>
+
+    <div id="canvas" v-on:mousemove="updateXY">
+      x: {{x}}, y: {{y}}
+    </div>
+      -->
+  </div>
+
+  <div id="vue-app2">
+  <!--
+    <p>
+      <h1>Key Events</h1>
+      <label>Name: </label>
+      <input type="text" v-model="name" @keydown.tab="keyName">
+      <p>
+        <span>{{name}}</span>
+      </p>
+    </p>
+    <p>
+      <label>Age: </label>
+      <input type="text" v-model="age" v-on:keyup.enter="keyAge">
+      <p><span>{{age}}</span></p>
+    </p>
+  -->
+  </div>
+
+  <div id="vue-app3">
+    <!-- <h1>Computed Properties</h1>
+    <button type="button" name="button" @click="a++">add A</button>
+    <button type="button" name="button" @click="b++">add B</button>
+    <p>A - {{a}}</p>
+    <p>B - {{b}}</p>
+    <p>Default age: {{age}}</p>
+    <p>Age with A: {{ageWithA}}</p>
+    <p>Age with B: {{ageWithB}}</p> -->
+  </div>
+
+  <div id="vue-app4">
+    <!-- <h1>Dynamic CSS</h1>
+    <h1>Example 1</h1>
+    <div @click="available=!available" :class="{available: available}">
+      <span>Tom Zé</span>
+    </div>
+    <h2>Example 2</h2>
+      <button type="button" name="button" @click="nearby=!nearby">
+        Toggle Nearby
+      </button>
+      <button type="button" name="button" @click="available=!available">
+        Toggle Nearby
+      </button>
+      <div :class="compClass">
+        <span>David Bowie</span>
+      </div> -->
+  </div>
+
+  <div id="vue-app5">
+    <!-- <h1>Conditional</h1>
+    <button type="button" name="button" v-on:click="error=!error">Toggle Error</button>
+    <button type="button" name="button" v-on:click="success=!success">Toggle Success</button>
+    <p v-if="error">This is an error</p>
+    <p v-else-if="success">Whoooo, success!!!</p>
+    <p v-show="success">Show Success</p>
+    <p v-show="error">Show Error</p> -->
+  </div>
+
+  <div id="vue-app6">
+    <h1>Looping with v-for</h1>
+    <ul>
+      <li v-for="character in characters">{{character}}</li>
+    </ul>
+    <ul>
+      <li v-for="(ninja,i) in ninjas">{{i}} - {{ninja}}</li>
+    </ul>
+    <ul>
+      <li v-for=" (ninja,index) in ninjas">{{index}} - Name: {{ninja.name}} - Age: {{ninja.age}}</li>
+    </ul>
+
+    <div v-for="(ninja,index) in ninjas">
+      <h4>{{index}} - {{ninja.name}}</h4>
+      <p>{{ninja.age}}</p>
+    </div>
+    <template v-for="(ninja,index) in ninjas">
+      <h4>{{index}} - {{ninja.name}}</h4>
+      <p>{{ninja.age}}</p>
+    </template>
+
+    <template v-for="ninja in ninjas">
+      <div v-for="(value,key) in ninja">
+        <p>{{key}} - {{value}}</p>
+      </div>
+    </template>
+
+  </div>
+
+  <script type="text/javascript" src="app2.js"></script>
+  <script type="text/javascript" src="app3.js"></script>
+  <script type="text/javascript" src="app4.js">  </script>
+  <script type="text/javascript" src="app5.js"></script>
+  <script type="text/javascript" src="app6.js"></script>
+
+</body>
+
+</html>

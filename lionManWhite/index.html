@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lion Man White</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="vue-app">
+    <h1>{{greet('afternoon')}}</h1>
+    <p>{{name}}</p>
+    <p>{{job}}</p>
+    <input type="text" :value="job">
+
+    <h1>The Bind Magic</h1>
+    <a v-bind:href="website">Universo Online</a>
+    <p v-html="websiteTag"></p>
+
+    <h1>Events</h1>
+
+    <button type="button" @click="addAge(1)">Add 1 year</button>
+    <button type="button" @dblclick="addAge(10)">Add 10 year (double click)</button>
+    <button type="button" @click=subtractAge(1)>Subtract 1 year</button>
+    <button type="button" @dblclick=subtractAge(10)>Subtract 10 year (double click)</button>
+
+    <p>{{age}}</p>
+
+    <div id="canvas" @mousemove="updateXY">
+      x: {{x}} y: {{y}}
+    </div>
+
+    <h1>Key Events</h1>
+
+    <p>
+      <label>Name: </label>
+      <input type="text" @keyup.enter="keyName" @keydown.tab="keyName" >
+      <label>Age: </label>
+      <input type="text" @keyup.enter="keyAge">
+    </p>
+
+    <h1>Models</h1>
+
+    <p>
+      <label>Name: </label>
+      <input type="text" v-model="name" @keydown.tab="eventName">
+      <h4>{{name}}</h4>
+    </p>
+    <p>
+      <label>Age: </label>
+      <input type="text" v-model="age" @keydown.enter="eventAge">
+      <h4>{{age}}</h4>
+    </p>
+
+    <h1>Computed Functions</h1>
+    <button type="button" name="button" @click="a++">add a</button>
+    <button type="button" name="button" @click="b++">add b</button>
+    <p>A - {{a}}</p>
+    <p>B - {{b}}</p>
+    <p>Age: {{age}}</p>
+    <p>Age with A: {{ageWithA}}</p>
+    <p>Age with B: {{ageWithB}}</p>
+
+    <h1>Dynamic CSS</h1>
+    <h2>Example 1</h2>
+    <div @click="available=!available" :class="{available:available}">
+      <span>Flávia Monteiro<span>
+    </div>
+    <button type="button" name="button" @click="available=!available">Toggle Available</button>
+    <button type="button" name="button" @click="nearby=!nearby">Toggle Nearby</button>
+    <div :class="compClass">
+      <span>Eng. do Hawaii</span>
+    </div>
+
+    <h1>Conditionals</h1>
+
+    <button type="button" name="button" @click="error=!error">Toggle Error</button>
+    <button type="button" name="button" @click="success=!success">Toggle Success</button>
+    <p v-if="error">IF error</p>
+    <p v-else-if="success">IF ELSE success</p>
+    <p v-show="success">Show Sucess</p>
+    <p v-show="error">Show Error</p>
+
+    <h1>Looping with V-for</h1>
+
+    <h3>List of Comic Books:</h3>
+
+    <ul>
+      <li v-for="(comic,index) in comics">{{index}} - {{comic}}</li>
+    </ul>
+
+    <template v-for="rank in comicsRanked">
+      <div v-for="(value,key) in rank" class="spaced">
+        <p>{{key}} - {{value}}</p>
+      </div>
+    </template>
+
+  </div>
+
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
